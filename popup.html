@@ -5,11 +5,6 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
-    <div
-      id="error-message"
-      class="error-message"
-      style="display: none; color: red"
-    ></div>
     <div id="content">
       <h1 class="bis-heading">BisHelpers</h1>
       <section>
@@ -20,16 +15,23 @@
         />
         <div class="bis-content">
           <p class="bis-p">Total Hours:</p>
-          <button class="bis-btn" id="clipboard-btn">
-            <img
-              class="bis-clipboard"
-              src="assets/clipboard.svg"
-              alt="Clipboard Icon"
-            />
-          </button>
-          <p id="copied-message" class="copied-message">Copied!</p>
+          <div>
+            <button title="Copy!" class="bis-btn" id="clipboard-btn">
+              <img
+                class="bis-clipboard"
+                src="assets/clipboard.svg"
+                alt="Clipboard Icon"
+                width="30"
+                height="30"
+              />
+              <p id="copied-message" class="copied-message">Copied!</p>
+            </button>
+          </div>
         </div>
-        <button class="bis-start-btn" id="start-btn">Start</button>
+        <div class="bis-btn-container">
+          <button class="bis-start-btn" id="start-btn">Start</button>
+          <button class="bis-reset-btn" id="reset-btn">Reset</button>
+        </div>
       </section>
     </div>
     <script src="popup.js"></script>

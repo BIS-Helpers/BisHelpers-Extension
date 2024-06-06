@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const startBtn = document.getElementById('start-btn');
+  const resetBtn = document.getElementById('reset-btn');
   const clipboardBtn = document.getElementById('clipboard-btn');
   const copiedMessage = document.getElementById('copied-message');
   const totalHoursElement = document.querySelector('.bis-p');
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log('Start button:', startBtn);
   console.log('Clipboard button:', clipboardBtn);
   console.log('Copied message:', copiedMessage);
+  console.log('Reset button:', resetBtn);
 
   if (startBtn) {
     startBtn.addEventListener('click', function () {
@@ -46,6 +48,19 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error('Start button not found');
   }
 
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      console.log('Reset button clicked');
+      // Clear the stored total hours and reset the display
+      chrome.storage.local.remove('totalHours', function () {
+        totalHoursElement.textContent = 'Total Hours: 0';
+        console.log('Total hours cleared from storage');
+      });
+    });
+  } else {
+    console.error('Reset button not found');
+  }
+
   if (clipboardBtn && copiedMessage) {
     clipboardBtn.addEventListener('click', function () {
       // Log the action
@@ -74,4 +89,11 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     console.error('Clipboard button or copied message element not found');
   }
+
+  // Clear the stored data when the popup is closed
+  window.addEventListener('unload', function () {
+    chrome.storage.local.remove('totalHours', function () {
+      console.log('Total hours cleared from storage');
+    });
+  });
 });

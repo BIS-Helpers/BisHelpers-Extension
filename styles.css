@@ -34,7 +34,7 @@ section {
   justify-content: center;
   gap: 45px;
   margin-top: 25px;
-  position: relative;
+  /* position: relative; */
 }
 
 .bis-btn {
@@ -43,6 +43,7 @@ section {
   outline: none;
   background-color: transparent;
   cursor: pointer;
+  position: relative;
 }
 
 .bis-clipboard {
@@ -59,10 +60,11 @@ section {
   display: none;
   position: absolute;
   top: 100%;
-  right: 20px;
+  right: 50%;
   margin-top: 10px;
   font-size: 14px;
   color: green;
+  transform: translateX(50%);
 }
 
 .bis-start-btn {
@@ -78,4 +80,23 @@ section {
 
 .bis-start-btn:hover {
   background-color: #45a049;
+}
+.bis-btn-container {
+  display: flex;
+  gap: 10px;
+}
+
+.bis-reset-btn {
+  margin-top: 25px;
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.bis-reset-btn:hover {
+  background-color: #ff3636;
 }
