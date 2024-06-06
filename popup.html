@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BisHelpers</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div
+      id="error-message"
+      class="error-message"
+      style="display: none; color: red"
+    ></div>
+    <div id="content">
+      <h1 class="bis-heading">BisHelpers</h1>
+      <section>
+        <img
+          class="bis-logo"
+          src="assets/bis_helpers_logo.jpg"
+          alt="BisHelpers Logo"
+        />
+        <div class="bis-content">
+          <p class="bis-p">Total Hours:</p>
+          <button class="bis-btn" id="clipboard-btn">
+            <img
+              class="bis-clipboard"
+              src="assets/clipboard.svg"
+              alt="Clipboard Icon"
+            />
+          </button>
+          <p id="copied-message" class="copied-message">Copied!</p>
+        </div>
+        <button class="bis-start-btn" id="start-btn">Start</button>
+      </section>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
